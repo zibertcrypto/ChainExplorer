@@ -1,0 +1,28 @@
+# utils/data_utils.py
+
+import json
+
+def load_json(file_path):
+    """
+    Load JSON data from a file.
+    
+    :param file_path: Path to the JSON file
+    :return: Loaded JSON data
+    """
+    with open(file_path, 'r') as f:
+        data = json.load(f)
+    return data
+
+def save_data(data, file_path):
+    """
+    Save data to a file in JSON format.
+    
+    :param data: Data to save
+    :param file_path: Path to the JSON file
+    """
+    with open(file_path, 'w') as f:
+        json.dump(data, f, indent=4)
+
+# Example usage:
+# data = load_json('data/block_data.json')
+# save_data(data, 'data/processed_block_data.json')
